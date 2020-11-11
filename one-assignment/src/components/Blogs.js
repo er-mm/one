@@ -1,5 +1,5 @@
 import { Grid, Card, CardContent, Typography } from '@material-ui/core';
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -14,14 +14,8 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-export function Blogs({setData, data}) {
+export function Blogs({data}) {
     const classes = useStyles();
-    useEffect(()=>{
-        fetch('http://localhost:3001/posts')
-        .then(res => res.json())
-        .then(data => setData(data));
-    },[]);
-
     return (
         <>
         <Grid container direction="row" spacing={4}>
